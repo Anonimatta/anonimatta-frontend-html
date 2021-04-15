@@ -1,0 +1,116 @@
+include _mixins
+doctype html
+html(lang="en")
+	head
+		include _head
+
+	body(class=bodyClass)
+		//- check dark mode
+		script.
+			console.log(localStorage.getItem('darkMode'));
+			if (localStorage.getItem('darkMode') === "on") {
+					document.body.classList.add("dark");
+					document.addEventListener("DOMContentLoaded", function() {
+					  document.querySelector('.js-switch-theme input').checked = true;
+					});
+			}
+			
+		block content
+		//- popup settings
+		.popup.popup_settings.mfp-hide#popup-settings
+			form.popup__form
+				.popup__title.h6 Configurações
+				.popup__tags
+					a.popup__tag.active(href="#") Perfil
+					a.popup__tag(href="#") Alterar senha
+					//- a.popup__tag(href="#") Email
+					a.popup__tag(href="#") Meu plano
+					a.popup__tag(href="#") Notificações
+				.popup__field.field.mobile-show
+					.field__wrap
+						select.field__select
+							option Your Profile
+							option Password
+							option Channels
+							option Apps
+							option Data Export
+				.popup__user
+					.popup__title.h6.mobile-show Your Profile
+					.popup__category.caption-sm Sua foto
+					.popup__line
+						.popup__ava
+							img.popup__pic(src="img/avatar.png" alt="")
+						.popup__details
+							.popup__btns
+								.popup__loading
+									input.popup__file(type="file")
+									button.popup__btn.btn.btn_purple Nova foto
+								button.popup__btn.btn.btn_gray Apagar foto
+							.popup__text Adicione uma nova foto para personalizar o seu perfil.
+				.popup__fieldset
+					.popup__row
+						.popup__field.field
+							.field__label Nome completo
+							.field__wrap
+								input.field__input(type="text")
+						.popup__field.field
+							.field__label Apelido
+							.field__wrap
+								input.field__input(type="text")
+					.popup__row
+						.popup__field.field
+							.field__label Role
+							.field__wrap
+								input.field__input(type="text")
+						.popup__field.field
+							.field__label Endereço
+							.field__wrap
+								input.field__input(type="text")
+					.popup__row
+						.popup__field.field
+							.field__label Role
+							.field__wrap
+								input.field__input(type="text")
+						.popup__field.field
+							.field__label Team
+							.field__wrap
+								input.field__input(type="text")
+					.popup__field.field
+						.field__label Bio
+						.field__wrap
+							textarea.field__textarea
+				button.popup__btn.btn.btn_purple(type="submit") Atualizar
+		//- popup stories
+		.popup.popup_stories.mfp-hide#popup-stories
+			.stories
+				.stories__container
+					.stories__slider.js-slider-stories
+						mixin slide
+							.stories__slide
+								.stories__item(style="background-image: url('img/stories-pic.png');")
+									.stories__progress
+										.stories__line.active
+										.stories__line
+									a.stories__user(href="#")
+										.stories__ava
+											img.stories__pic(src="img/ava-1.png" alt="")
+										.stories__desc
+											.stories__man.confirm Sarah Caus
+											.stories__game Ensaio Anonimatta
+											.status.orange 2.8K views
+									form.stories__form
+										input.stories__input(type="text" placeholder="Escrever mensagem…")
+										button.stories__btn.btn.btn_purple Enviar
+										button.stories__smile
+											+i('editor-smile')
+						+slide
+						+slide
+						+slide
+						+slide
+						+slide
+						+slide
+						+slide
+						+slide
+						+slide
+						+slide
+		include ./_scripts

@@ -1,0 +1,90 @@
+---
+title: Anonimatta
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('active')
+		.page__wrapper
+			+header
+			.main.js-main
+				.main__container
+					.main__for.js-slider.js-main-for
+						mixin slideBig(image)
+							.main__slide
+								.main__item(style="background-image: url(" + image + ");")
+									.main__details
+										.main__live.live.live_big Nude
+										.main__title.h4 Detalhes da Gabi Dorta
+										.main__parameters
+											.main__parameter
+												.main__icon
+													img.main__pic(src="img/league-of-legends.png" alt="")
+												.main__text Gabrieli Dorta
+											.main__parameter 22.06.21
+										button.main__btn.btn.btn_purple Ver ensaio
+						+slideBig('img/main-pic-1.jpg')
+						+slideBig('img/main-pic-2.jpg')
+						+slideBig('img/main-pic-3.jpg')
+						+slideBig('img/main-pic-4.jpg')
+						+slideBig('img/main-pic-1.jpg')
+						+slideBig('img/main-pic-2.jpg')
+						+slideBig('img/main-pic-3.jpg')
+						+slideBig('img/main-pic-4.jpg')
+					.main__nav.js-main-nav
+						mixin slideSm(image)
+							.main__preview(style="background-image: url(" + image + ");")
+						+slideSm('img/main-pic-1.jpg')
+						+slideSm('img/main-pic-2.jpg')
+						+slideSm('img/main-pic-3.jpg')
+						+slideSm('img/main-pic-4.jpg')
+						+slideSm('img/main-pic-1.jpg')
+						+slideSm('img/main-pic-2.jpg')
+						+slideSm('img/main-pic-3.jpg')
+						+slideSm('img/main-pic-4.jpg')
+					.main__line
+						.main__progress.js-main-progress(role="progressbar" aria-valuemin="0" aria-valuemax="100")
+							span.main__label.js-slider-label.sr-only
+			.page__center
+				+users
+				.collection
+					.collection__head
+						.collection__title.h5 Últimos ensaios
+						.trending__sorting
+								.trending__field.field.mobile-show
+									.field__wrap
+										select.field__select.purple
+											option Todos 
+											option Nude 
+											option Topless
+											option Lingerie
+								.trending__tags
+									a.trending__tag.trending__tag_all(href='#') Todos 
+									a.trending__tag(href='#') Nude 
+									a.trending__tag(href='#') Topless
+									a.trending__tag(href='#') Lingerie
+								
+					.collection__list
+						+card('img/modelo01.jpg', 'Nome do ensaio', 'img/ava-1.png', '', 'Apelido', '')
+						+card('img/modelo02.jpg', 'Nome do ensaio', 'img/ava-2.png', '', 'Apelido', '')
+						+card('img/modelo03.jpg', 'Nome do ensaio', 'img/ava-3.png', '', 'Apelido', '')
+						+card('img/modelo04.jpg', 'Nome do ensaio', 'img/ava-4.png', '', 'Apelido', '')
+				//- +users('Perfis para seguir')
+				//- +categories('Categorias')
+				+posts 
+				.collection
+					.collection__head
+						.collection__title.h5 Conteúdos recomendados
+						.collection__field.field
+							.field__wrap
+								select.field__select
+									option Mais recentes
+									option Premium
+									option Grátis
+					.collection__list
+						+card('img/card-pic-1.png', 'Meu novo conteúdo', 'img/ava-1.png', '', 'Apelido', 'Modelo')
+						+card('img/card-pic-2.png', 'Novo pack exclusivo', 'img/ava-2.png', '', 'Apelido', 'Modelo')
+						+card('img/card-pic-3.png', 'Ensaio de quarentena', 'img/ava-3.png', '', 'Apelido', 'Modelo')
+						+card('img/card-pic-4.png', 'Ensaio Animal Print', 'img/ava-4.png', '', 'Apelido', 'Modelo')
+
+

@@ -1,0 +1,138 @@
+---
+title: Channel profile
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', '', '', '', 'active')
+		.page__wrapper
+			+header
+			.main.main_channel.js-main
+				.main__container
+					.main__for.js-slider.js-main-for
+						mixin slideBig(image)
+							.main__slide
+								.main__item(style="background-image: url(img/imgback.png);")
+									.main__details
+										//- .main__live.live.live_big Live
+										//- .main__title.h4 Meus ensaios
+										//- .main__parameters
+										//- 	.main__parameter
+										//- 		.main__icon
+										//- 			img.main__pic(src="img/league-of-legends.png" alt="")
+										//- 		.main__text Maikel Galvão
+										//- 	.main__parameter 22.07.21
+						+slideBig('img/main-pic-1.png')
+						//- +slideBig('img/main-pic-2.jpg')
+						//- +slideBig('img/main-pic-3.jpg')
+						//- +slideBig('img/main-pic-4.jpg')
+						//- +slideBig('img/main-pic-1.png')
+						//- +slideBig('img/main-pic-2.jpg')
+						//- +slideBig('img/main-pic-3.jpg')
+						//- +slideBig('img/main-pic-4.jpg')
+					//- .main__nav.js-main-nav
+					//- 	mixin slideSm(image)
+					//- 		.main__preview(style="background-image: url(" + image + ");")
+					//- 	+slideSm('img/main-pic-1.png')
+					//- 	+slideSm('img/main-pic-2.jpg')
+					//- 	+slideSm('img/main-pic-3.jpg')
+					//- 	+slideSm('img/main-pic-4.jpg')
+					//- 	+slideSm('img/main-pic-1.png')
+					//- 	+slideSm('img/main-pic-2.jpg')
+					//- 	+slideSm('img/main-pic-3.jpg')
+					//- 	+slideSm('img/main-pic-4.jpg')
+			.page__center.page__center_pt0
+				.author.author_big
+					.author__container
+						.author__details
+							.ava.ava_online
+								img.ava__pic(src="img/ava-1.png" alt="")
+							.author__wrap
+								.author__man.h2.confirm Lary Bottino
+								.author__parameters
+									.author__parameter.h6 536K seguidores
+									.author__parameter.h6 120 publicações
+						.author__btns
+							button.author__btn.btn.btn_purple Message
+							button.author__btn.btn.btn_asphalt.btn_square
+								+i('profile-check')
+				.catalog.catalog_channel
+					.catalog__nav
+						a.catalog__link.active(href='#') Videos
+						a.catalog__link(href='#') About
+						a.catalog__link(href='#') Stories
+						a.catalog__link(href='#') Schedules 
+					.catalog__sorting
+						.field.mobile-show
+							.field__wrap
+								select.field__select.purple
+									option Todos
+									option Fotos
+									option Vídeos
+						.catalog__tags.mobile-hide
+							a.catalog__tag(href="#") Todos
+							a.catalog__tag(href="#") Fotos
+							a.catalog__tag(href="#") Vídeos
+						.field
+							.field__wrap
+								select.field__select
+									option Popular Videos
+									option New
+									option Free
+					.catalog__list
+						+game('img/card-pic-1.png', true)
+						+game('img/card-pic-2.png', true)
+						+game('img/card-pic-3.png', true)
+						+game('img/card-pic-4.png', true)
+						+game('img/card-pic-5.png', true)
+						+game('img/card-pic-6.png', true)
+						+game('img/card-pic-1.png', true)
+						+game('img/card-pic-2.png', true)
+					.catalog__btns
+						button.catalog__btn.btn.btn_gray Load More
+			.page__slider.page__slider_pt0
+				.page__title.h5 Ensaios no Anonimatta
+				.main.main_trending.js-main
+					.main__body
+						.main__slider.js-slider.js-main-slider
+							mixin slideBig(image)
+								.main__slide
+									.main__item(style="background-image: url(" + image + ");")
+										.main__details
+											.main__live.live.live_big Nude
+											.main__title.h4 Nome do ensaio
+											.main__parameters
+												.main__parameter
+													.main__icon
+														img.main__pic(src="img/league-of-legends.png" alt="")
+													.main__text Adalto Jr
+												.main__parameter 22.01.21
+											button.main__btn.btn.btn_purple Ver ensaio
+							+slideBig('img/main-photo-1.png')
+							+slideBig('img/main-photo-2.png')
+							+slideBig('img/main-photo-1.png')
+							+slideBig('img/main-photo-2.png')
+							+slideBig('img/main-photo-1.png')
+							+slideBig('img/main-photo-2.png')
+							+slideBig('img/main-photo-1.png')
+							+slideBig('img/main-photo-2.png')
+					.main__foot
+						.main__counter.js-main-counter
+						.main__indicator Mostrando 
+							span.main__status.js-main-status
+			.page__center
+				.collection
+					.collection__head
+						.collection__title.h5 Conteúdos recomendados
+						.collection__field.field
+							.field__wrap
+								select.field__select
+									option Mais recentes
+									option Mais relevantes
+					.collection__list
+						+card('img/card-pic-1.png', 'Meu novo conteúdo', 'img/ava-1.png', '', 'Apelido', 'Modelo')
+						+card('img/card-pic-2.png', 'Meu novo conteúdo', 'img/ava-2.png', '', 'Apelido', 'Modelo')
+						+card('img/card-pic-3.png', 'Meu novo conteúdo', 'img/ava-3.png', '', 'Apelido', 'Modelo')
+						+card('img/card-pic-4.png', 'Meu novo conteúdo', 'img/ava-4.png', '', 'Apelido', 'Modelo')
+
+
