@@ -467,7 +467,7 @@ $('.trending .card__inner').on('click', function(e){
     });
 }());
 
-$(".chat__container").scrollTop($(".chat__container")[0].scrollHeight);
+//$(".chat__container").scrollTop($(".chat__container")[0].scrollHeight);
 
 $(document).ready(function() {
 	$('.field__select').niceSelect();
